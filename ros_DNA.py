@@ -1,0 +1,6 @@
+seq = input("Sequence: ")
+A = seq.count("A")
+C = seq.count("C")
+G = seq.count("G")
+T = seq.count("T")
+print (A,C,G,T)
