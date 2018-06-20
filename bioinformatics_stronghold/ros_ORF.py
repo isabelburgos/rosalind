@@ -47,7 +47,6 @@ def translate(seq,n):
             proteins.append(protein)
             return
         else:
-            print(seq[i:i+3],":",dic.get(seq[i:i+3]))
             protein += dic.get(seq[i:i+3])
 
 search(seq)
