@@ -1,18 +1,13 @@
 dnaseq = open("rosalind_prot.txt","r")
 seq = str(dnaseq.read()).strip("\n")
 
-file = open("proteintable.txt")
+table = open("proteintable.txt")
 dic = {}
-for line in file:
-    for val in line.split(" "):
-        entry = val.strip("\n")
-        if len(entry) == 0:
-            pass
-        if len(entry) == 3:
-            name = entry
-            dic.update({name:""})
-        else:
-            dic[name] += entry
+for line in table:
+    line = (line.strip()).split()
+    for i in range(0,len(line),2):
+        codon,aa = line[i:i+2]
+        dic[codon] = aa
 
 codons = [seq[i:i+3] for i in range(0, len(seq), 3)]
 
