@@ -11,15 +11,10 @@ for line in file:
 table = open("proteintable.txt")
 dic = {}
 for line in table:
-    for val in line.split(" "):
-        entry = val.strip("\n")
-        if len(entry) == 0:
-            pass
-        if len(entry) == 3:
-            name = entry
-            dic.update({name:""})
-        else:
-            dic[name] += entry
+    line = (line.strip()).split()
+    for i in range(0,len(line),2):
+        codon,aa = line[i:i+2]
+        dic[codon] = aa
 
 def search_find(seq,intr):
     loc = seq.find(intr)
